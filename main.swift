@@ -12,7 +12,7 @@ let modulus: String = "00b6b7f8531b19980c66ae08e3061c6295a1dfd9406b32b202a597378
 
 let exponent: String = "010001"
 
-let encryptor = Encryptor(message: "111111")
+let encryptor = Encryptor(message: "142210")
 
 let passwd: String = encryptor.encrypt()
 

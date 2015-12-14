@@ -153,7 +153,7 @@ class Calculator: Converter {
         
         var lowIndex = result.digits.count - 1
         var leftIndex = lowIndex - 1
-        for index, leftIndex; lowIndex > 0; --lowIndex, --leftIndex {
+        for ; lowIndex > 0; --lowIndex, --leftIndex {
             result.digits[lowIndex] = ((result.digits[lowIndex] << bits) & BigInt.maxDigitVal) | ((result.digits[leftIndex] & highBitMasks[bits]) >> rightBits)
         }
         result.digits[0] = (result.digits[lowIndex] << bits) & BigInt.maxDigitVal
@@ -179,7 +179,7 @@ class Calculator: Converter {
         
         var highIndex = 0
         var rightIndex = highIndex + 1
-        for index, highIndex; highIndex < result.digits.count - 1; ++highIndex, ++rightIndex {
+        for ; highIndex < result.digits.count - 1; ++highIndex, ++rightIndex {
             result.digits[highIndex] = (result.digits[highIndex] >> bits) | ((result.digits[rightIndex] & lowBitMasks[bits]) << leftBits)
         }
         result.digits[result.digits.count - 1] >>= bits
